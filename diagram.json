@@ -1,1 +1,31 @@
-
+{
+  "version": 1,
+  "author": "ChatGPT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": -120,
+      "left": 220,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix",
+      "top": -80,
+      "left": -120,
+      "attrs": {
+        "chain": "8",
+        "layout": "fc16"
+      }
+    }
+  ],
+  "connections": [
+    ["mega:5V", "matrix:V+", "red"],
+    ["mega:GND.2", "matrix:GND", "black"],
+    ["mega:11", "matrix:DIN", "blue"],
+    ["mega:10", "matrix:CS", "green"],
+    ["mega:13", "matrix:CLK", "orange"]
+  ]
+}
